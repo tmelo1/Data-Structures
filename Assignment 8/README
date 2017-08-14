@@ -1,0 +1,41 @@
+Words benchmark BSTMap
+
+sorted1   -- 100    words, 100000 range  -- 0.06 seconds 27364 KB
+sorted2   -- 1000   words, -             -- 0.16 seconds 35408 KB
+sorted3   -- 10000  words, -             -- 2.84 seconds 73756 KB
+random1   -- 100    words, -             -- 0.06 seconds 26800 KB
+random1.1 -- 100    words, -             -- 0.09 seconds 26548 KB
+random2   -- 1000   words, -             -- 0.09 seconds 36284 KB
+random2.1 -- 1000   words, -             -- 0.15 seconds 35540 KB
+random3   -- 10000  words, -             -- 0.19 seconds 79160 KB
+random3.1 -- 10000  words, -             -- 0.15 seconds 78836 KB
+random4   -- 100000 words, 1000000 range -- 0.56 seconds 201412 KB
+random4.1 -- 100000 words, 1000000 range -- 0.48 seconds 195728 KB
+
+Words benchmark AVLMap
+sorted1   -- 100    words, 100000 range  -- 0.08 seconds 26984 KB
+sorted2   -- 1000   words, -             -- 0.09 seconds 35804 KB
+sorted3   -- 10000  words, -             -- 0.21 seconds 79684 KB
+random1   -- 100    words, -             -- 0.09 seconds 26988 KB
+random1.1 -- 100    words, -             -- 0.06 seconds 27008 KB
+random2   -- 1000   words, -             -- 0.15 seconds 36968 KB
+random2.1 -- 1000   words, -             -- 0.10 seconds 37176 KB
+random3   -- 10000  words, -             -- 0.22 seconds 84068 KB
+random3.1 -- 10000  words, -             -- 0.23 seconds 79284 KB
+random4   -- 100000 words, 1000000 range -- 0.46 seconds 209300 KB
+random4.1 -- 100000 words, 1000000 range -- 0.43 seconds 188664 KB
+
+Words benchmark TreapMap
+sorted1   -- 100    words, 100000 range  -- 0.09 seconds 26704 KB
+sorted2   -- 1000   words, -             -- 0.11 seconds 35936 KB
+sorted3   -- 10000  words, -             -- 0.23 seconds 82344 KB
+random1   -- 100    words, -             -- 0.11 seconds 26948 KB
+random1.1 -- 100    words, -             -- 0.12 seconds 26852 KB
+random2   -- 1000   words, -             -- 0.10 seconds 35688 KB
+random2.1 -- 1000   words, -             -- 0.16 seconds 37220 KB
+random3   -- 10000  words, -             -- 0.17 seconds 79228 KB
+random3.1 -- 10000  words, -             -- 0.22 seconds 84084 KB
+random4   -- 100000 words, 1000000 range -- 0.53 seconds 196744 KB
+random4.1 -- 100000 words, 1000000 range -- 0.49 seconds 186540 KB
+
+Because sorted data would create a binary search tree with horrible balancing, sorted data inserted into a BST creates a tree with a height equal to the number of keys inserted into it because you would insert the smallest key at the root and end up with a chain of left children and no right children. However, with random values, it is almost impossible to end up with a permutation of 100/1000/10000 values from 1 to 100000 that is sorted in ascending order, meaning that we would expected the BST for random data to be much closer to the height of log(n) that we would want. As such, an insertion or lookup that runs in O(logn) time approximately runs much faster asymptotically that an insertion or lookup that runs in linear time for large data sets. As such, the random data should always be faster for insertion, lookups, and removals. When compared to the AVLTreeMap, it's clear that the AVL tree will always perform better for sorted data sets because it self-organizes to maintain a height of approximately O(logn) (closer to the golden ratio), meaning that every operation will be performed more quickly than a BST which will have a height O(n) for sorted data sets. For random data, the performances are comparable for small data sets since the heights are too much of a problem, however, the AVL tree scales better to bigger data sets because of its guaranteed O(logn) height and performance times for critical operations. With the Treap map implementation, because the probability of getting a data set that causes poor performance of so low, and even a pseudo-random number generator (Math.Random) would likely not cause any two keys to be assigned the same priorities, the performance of a treap is very much comparable, even sometimes better than the AVLTree, implying that the probabilistic balancing of a Treap holds when we can be confident in our set of random numbers. 

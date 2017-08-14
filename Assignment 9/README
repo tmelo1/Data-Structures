@@ -1,0 +1,10 @@
+Tony Melo - tmelo1@jhu.edu
+
+Originally, my HashMap started as an ArrayList that used cuckoo hashing to resolve collisions.
+I found that it was not worth the effort to resolve the issue with potentially causing
+a massive cycle with attempting to insert, so I attempted to use double hashing. However,
+double hashing works best with a prime table size, so I switched to an array so I could control
+the capacity of the HashMap. But, because calculating the next prime number can be expensive,
+I decided to simply use linear probing. This was definitely less efficient, however, for the sake of this assignment,
+linear probing still resulted in a decent run time for some of the sample inputs given.
+

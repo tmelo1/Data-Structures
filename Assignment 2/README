@@ -1,0 +1,27 @@
+Tony Melo - tmelo1@jhu.edu
+
+adt FlexibleArray 
+
+	uses Any, Integer
+        defines FlexibleArray<T: Any>
+
+	operations
+		new: Integer x Integer x T -/-> FlexibleArray<T>
+		get: FlexibleArray<T> x Integer -/-> T
+		put: FlexibleArray<T> x Integer x T -/-> FlexibleArray<T>
+		length: FlexibleArray<T> -/-> Integer
+
+	preconditions
+		new(l, u, t):	l <= u		//Lower bound (L) has to be strictly less than upper bound (U)
+		new(l, u, t):	if (l = u), length(a) = 1
+		get(a, i): l <= i < u - l	//Can only get elements within bounds of the array
+		put(a, i, t): l <= i < u - l	//Can only put elements within bounds of the array
+
+	axioms
+		get(new(n, t), i) = t		//same
+		get(put(a, i, t), j) = (if i = j then t else get(a, j))
+		length(new(l, u, t)) = u - l		//length is upper - lower since we don't start at 0
+		length(put(a, i, t)) = length(a)	//same for array 
+
+I prefer zero-based arrays in general because of their intuitive nature, but more specifically, I do like sparse arrays because of their space efficiency and somewhat intuitive nature as well.
+

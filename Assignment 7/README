@@ -1,0 +1,78 @@
+testdata1   -- 1000 numbers, 0% repetition
+testdata1.1 -- 1000 numbers, 50% repetition
+testdata1.2 -- 1000 numbers, 90% repetition
+
+testdata2   -- 10000 numbers, 0% repetition
+testdata2.1 -- 10000 numbers, 50% repetition
+testdata2.2 -- 10000 numbers, 90% repetition
+
+testdata3   -- 100000 numbers, 0% repetition
+testdata3.1 -- 100000 numbers, 50% repetition
+testdata3.2 -- 100000 numbers, 90% repetition
+
+ArraySet:
+testdata1   -- 0.13 seconds 33032 kilobytes
+testdata1.1 -- 0.09 seconds 32320 kilobytes
+testdata1.2 -- 0.07 seconds 30628 kilobytes
+
+testdata2   -- 0.24 seconds 47444 kilobytes
+testdata2.1 -- 0.22 seconds 48876 kilobytes
+testdata2.2 -- 0.10 seconds 43300 kilobytes
+
+testdata3   -- 8.31 seconds 107468 kilobytes
+testdata3.1 -- 4.12 seconds 107104 kilobytes
+testdata3.2 -- 1.24 seconds 100548 kilobytes
+
+ListSet:
+testdata1   -- 0.10 seconds 33268 kilobytes
+testdata1.1 -- 0.08 seconds 31048 kilobytes
+testdata1.2 -- 0.08 seconds 31812 kilobytes
+
+testdata2   -- 0.53 seconds 44744 kilobytes
+testdata2.1 -- 0.36 seconds 46352 kilobytes
+testdata2.2 -- 0.16 seconds 44328 kilobytes
+
+testdata3   -- 38.24 seconds 108752 kilobytes
+testdata3.1 -- 16.60 seconds 105484 kilobytes
+testdata3.2 -- 3.13 seconds 101020 kilobytes
+
+ListSet:
+testdata1   -- 0.10 seconds 33268 kilobytes
+testdata1.1 -- 0.08 seconds 31048 kilobytes
+testdata1.2 -- 0.08 seconds 31812 kilobytes
+
+testdata2   -- 0.53 seconds 44744 kilobytes
+testdata2.1 -- 0.36 seconds 46352 kilobytes
+testdata2.2 -- 0.16 seconds 44328 kilobytes
+
+testdata3   -- 38.24 seconds 108752 kilobytes
+testdata3.1 -- 16.60 seconds 105484 kilobytes
+testdata3.2 -- 3.13 seconds  101020 kilobytes
+
+
+
+MoveToFrontListSet:
+testdata1   -- 0.15 seconds  33112 kilobytes
+testdata1.1 -- 0.12 seconds  32776 kilobytes
+testdata1.2 -- 0.11 seconds  31212 kilobytes
+
+testdata2   -- 0.61 seconds  46252 kilobytes
+testdata2.1 -- 0.35 seconds  45024 kilobytes
+testdata2.2 -- 0.14 seconds  45352 kilobytes
+
+testdata3   -- 37.92 seconds 112452 kilobytes
+testdata3.1 -- 22.30 seconds 103544 kilobytes
+testdata3.2 -- 3.81 seconds  101300 kilobytes
+
+TransposeArraySet:
+testdata1   -- 0.12 seconds 33480 kilobytes
+testdata1.1 -- 0.13 seconds 32280 kilobytes
+testdata1.2 -- 0.08 seconds 31568 kilobytes
+
+testdata2   -- 0.21 seconds 49780 kilobytes
+testdata2.1 -- 0.18 seconds 48976 kilobytes
+testdata2.2 -- 0.16 seconds 43040 kilobytes
+
+testdata3   -- 8.28 seconds 106364 kilobytes
+testdata3.1 -- 4.14 seconds 104992 kilobytes
+testdata3.2 -- 1.36 seconds 101108 kilobytes
